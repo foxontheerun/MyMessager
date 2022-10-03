@@ -3,6 +3,7 @@ import './App.css';
 import Profile from './Components/Profile/Profile';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
+import Dialogs from './Components/Dialogs/Dialogs';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       <Header/>
       <main className='main'>
         <Navbar/>
-        <Profile/>
+        {/* <Profile/> */}
+        <Dialogs/>
       </main>
     </div>
   );
