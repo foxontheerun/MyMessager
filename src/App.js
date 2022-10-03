@@ -1,14 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Form from './Form/Form';
-import Canvas from './Game/Canvas';
+import Profile from './Components/Profile/Profile';
+import Header from './Components/Header/Header';
+import Navbar from './Components/Navbar/Navbar';
+
 
 function App() {
   return (
-    <>
-      <Form></Form>
-      <Canvas></Canvas>
-    </>
+    <div className='app-wrapper'>
+      <Header/>
+      <main className='main'>
+        <Navbar/>
+        <Profile/>
+      </main>
+    </div>
   );
 }
 

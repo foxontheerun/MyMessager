@@ -1,0 +1,9 @@
+.header {
+    width: 100%;
+    background: var(--sidebar-color);
+    height: 100px;
+}
+
+  .header  img {
+    margin: 5px;
+  }
