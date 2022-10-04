@@ -3,6 +3,11 @@ import style from './MyPosts.module.css';
 import Post from './Post/Post';
 
 function MyPosts() {
+    const postsData =[
+        { id: 1, message: 'Hi, how are u?', likesCount: 53},
+        { id: 2, message: 'It is my first post!', likesCount: 67},
+    ];
+
     return (
         <div className={style.postBlock}>
           <h3>My posts</h3>
@@ -15,10 +20,8 @@ function MyPosts() {
             </div>
           </div>
           <div className={style.post}>
-            <Post message='Hi, how are u?'/>
-            <Post message='It is my first post!'/>
-            <Post/>
-            <Post/>
+              <Post message={postsData[0].message} likesCount={postsData[0].likesCount}/>
+              <Post message={postsData[1].message} likesCount={postsData[1].likesCount}/>
           </div>
         </div>
     );
