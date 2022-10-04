@@ -1,5 +1,16 @@
-
 .nav {
     background: var(--background-color);
     width: 20%;
+    font-size: 20px;
+    padding: 20px;
   }
+
+a {
+    color: var(--header-color);
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+}
+

@@ -1,11 +1,14 @@
 :root {
   --background-color: rgb(234, 212, 255);
-  --sidebar-color: rgb(111, 74, 126);
+  --header-color: rgb(111, 74, 126);
   --main-content-color: rgb(246, 235, 255);
   --apple-color: rgb(219, 0, 0);
   
 }
-
+.app-wrapper-content {
+  background: var(--main-content-color);
+  padding: 10px;
+}
 
 .main {
   display: flex;

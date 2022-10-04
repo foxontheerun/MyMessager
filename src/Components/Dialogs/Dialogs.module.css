@@ -1,0 +1,22 @@
+.dialogs {
+    display: flex;
+    font-size: 20px;
+}
+
+.messages {
+
+}
+
+.message {
+    padding: 10px;
+}
+
+.dialogItem .dialog {
+    color: var(--header-color);
+    width: 200px;
+    padding: 10px;
+}
+
+.dialogItem  .active {
+    color: black;
+}
