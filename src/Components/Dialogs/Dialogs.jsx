@@ -20,24 +20,12 @@ function Message(props) {
 
 function Dialogs(props) {
 
-    const dialogs =[ { id: 1, name: 'Nailya'},
-                        { id: 2, name: 'Alsu'},
-                        { id: 3, name: 'Polina'},
-                        { id: 4, name: 'Masha'},
-                        { id: 5, name: 'Aigul'},
-    ];
 
-    const messages =[ { id: 1, message: 'Hi'},
-                        { id: 2, message: '=)'},
-                        { id: 3, message: '=(('},
-                        { id: 4, message: 'Привет'},
-                        { id: 5, message: 'Пока'},
-    ];
 
-    const dialogsElements = dialogs
+    const dialogsElements = props.state.dialogs
         .map(dialog => <DialodItem name={dialog.name} id={dialog.id}/>);
 
-    const messagesElements = messages
+    const messagesElements = props.state.messages
         .map(message => <Message message={message.message}/>);
 
     return (

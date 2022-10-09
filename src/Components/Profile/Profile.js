@@ -3,11 +3,15 @@ import MyPosts from './MyPosts/myPosts';
 import p from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-function Profile() {
+function Profile(props) {
+
     return (
         <div >
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts posts={props.profilePage.posts}
+                     newPostText={props.profilePage.newPostText}
+                     updateNewPostText={props.updateNewPostText}
+                     addPost={props.addPost}/>
       </div>
     );
 } 
