@@ -7,12 +7,11 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export const rerenderEntireTree = (state) => {
+const rerenderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App state={store.state}
-                 addPost={store.addPost}
-                 updateNewPostText={store.updateNewPostText}/>
+            <App state={state}
+                 dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>
     );
 };
