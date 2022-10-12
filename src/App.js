@@ -19,7 +19,8 @@ function App(props) {
                           <Routes>
                               <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
                                                                        dispatch={props.dispatch}/>}/>
-                              <Route path='/messages' element={<Dialogs state={props.state.dialogsPage}/>}/>
+                              <Route path='/messages' element={<Dialogs dialogsPage={props.state.dialogsPage}
+                                                                        dispatch={props.dispatch}/>}/>
                               <Route path='/news' element={<News />}/>
                           </Routes>
                       </div>

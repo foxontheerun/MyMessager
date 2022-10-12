@@ -1,8 +1,8 @@
 import React from "react";
 import style from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
-
-function DialodItem(props) {
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../Redux/state";
+function DialogItem(props) {
     const path = '/messages/' + props.id;
 
     return (
@@ -19,22 +19,39 @@ function Message(props) {
 }
 
 function Dialogs(props) {
+    const dialogsElements = props.dialogsPage.dialogs
+        .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-
-
-    const dialogsElements = props.state.dialogs
-        .map(dialog => <DialodItem name={dialog.name} id={dialog.id}/>);
-
-    const messagesElements = props.state.messages
+    const messagesElements = props.dialogsPage.messages
         .map(message => <Message message={message.message}/>);
-
-    return (
+    const newMessageElement = React.createRef();
+    const addMessage = () => {
+        props.dispatch( addMessageActionCreator() );
+    }
+    const onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        props.dispatch( updateNewMessageTextActionCreator(text) );
+    }
+        return (
         <div className={style.dialogs}>
             <div className={style.dialogItem}>
                 { dialogsElements }
            </div>
             <div className={style.messages}>
                 { messagesElements }
+                <div className={style.texting}>
+                    <div>
+                <textarea ref={newMessageElement}
+                          onChange={ onMessageChange }
+                          value={props.dialogsPage.newMessageText}
+                          className={style.textarea}/>
+                    </div>
+                    <div>
+                        <button
+                            onClick={ addMessage }
+                            className={style.btnadd}>Add post</button>
+                    </div>
+                </div>
             </div>
         </div>
     );

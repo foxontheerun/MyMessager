@@ -20,3 +20,34 @@
 .dialogItem  .active {
     color: black;
 }
+
+.textarea {
+    width: 100%;
+    height: 100%;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    outline:none;
+    resize: none;
+
+}
+
+.btnadd {
+    width: 82px;
+    /* margin: 20px 0; */
+    height: 40px;
+    background-color: var(--header-color);
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding:10px;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.texting {
+    display: flex;
+}
