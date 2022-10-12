@@ -1,10 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .dialogs {
     display: flex;
     font-size: 20px;
 }
 
 .messages {
-
+    background: white;
+    border-radius: 20px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .message {
@@ -15,6 +26,7 @@
     color: var(--header-color);
     width: 200px;
     padding: 10px;
+    padding-left: 30px;
 }
 
 .dialogItem  .active {
@@ -22,32 +34,39 @@
 }
 
 .textarea {
-    width: 100%;
-    height: 100%;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    padding:10px;
-    border-radius:10px;
+    width: 500px;
+    height: 30px;
+    border-color: #999999;
+    /*box-shadow:0 0 15px 4px rgba(0,0,0,0.06);*/
+    margin: 20px 10px 20px 20px;
+    border-radius: 10px;
     outline:none;
     resize: none;
+    padding: 5px;
 
 }
 
 .btnadd {
-    width: 82px;
-    /* margin: 20px 0; */
+    width: 40px;
     height: 40px;
-    background-color: var(--header-color);
+    background-color: var(--accent-color);
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     padding:10px;
     border-radius:10px;
     display: flex;
+    margin-top: 20px;
     align-items: center;
     justify-content: center;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
 }
 
-.texting {
+.inputText {
     display: flex;
+    background: #efefef;
+    width: 600px;
+    height: 80px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
+

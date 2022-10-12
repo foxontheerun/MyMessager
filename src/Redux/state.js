@@ -22,13 +22,13 @@ let store = {
                 { id: 4, name: 'Masha'},
                 { id: 5, name: 'Aigul'},
             ],
-            messages: [ { id: 1, message: 'Hi'},
+            messages: [ { id: 1, message: 'привет'},
                 { id: 2, message: '=)'},
                 { id: 3, message: '=(('},
-                { id: 4, message: 'Привет'},
-                { id: 5, message: 'Пока'},
+                { id: 4, message: 'как дела?'},
+                { id: 5, message: 'как самочувствие?'},
             ],
-            newMessageText: 'Hello world'
+            newMessageText: ''
         }
     },
     _callSubscriber()  {

@@ -1,11 +1,12 @@
 import React from 'react';
-import h from './Header.module.css';
+import h from './Header.module.css'
 
 
 function Header() {
     return (
         <header className={h.header}>
-            <img src='images/logoCupidon.png' width="30" height="30"></img>
+            {/*<img src='images/INTERPOLATION.png' width="50" height="45"></img>*/}
+            <h1>FROG</h1>
         </header>
     );
 } 

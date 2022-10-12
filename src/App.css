@@ -1,9 +1,8 @@
 :root {
-  --background-color: rgb(234, 212, 255);
-  --header-color: rgb(111, 74, 126);
-  --main-content-color: rgb(246, 235, 255);
-  --apple-color: rgb(219, 0, 0);
-  
+  --background-color: rgb(217, 225, 195);
+  --header-color: rgb(255, 255, 255);
+  --accent-color: rgb(107, 192, 39);
+  --main-content-color: rgb(217, 225, 195);
 }
 .app-wrapper-content {
   background: var(--main-content-color);
@@ -15,3 +14,8 @@
   background: var(--main-content-color);
 }
 
+.block {
+  border-radius: 10px;
+  background: #ffffff;
+  border: 0;
+}

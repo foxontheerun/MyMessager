@@ -1,9 +1,15 @@
 .header {
     width: 100%;
     background: var(--header-color);
-    height: 100px;
+    height: 60px;
+    padding-top: 20px;
+    padding-left: 80px;
+    display: flex;
+    color: var(--accent-color);
+    font-family: LogoPixies, Impact;
+    font-size: 20px;
 }
 
   .header  img {
-    margin: 5px;
+      padding-right: 10px;
   }

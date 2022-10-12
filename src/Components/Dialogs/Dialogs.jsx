@@ -18,12 +18,7 @@ function Message(props) {
     );
 }
 
-function Dialogs(props) {
-    const dialogsElements = props.dialogsPage.dialogs
-        .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
-
-    const messagesElements = props.dialogsPage.messages
-        .map(message => <Message message={message.message}/>);
+function Input(props) {
     const newMessageElement = React.createRef();
     const addMessage = () => {
         props.dispatch( addMessageActionCreator() );
@@ -32,30 +27,44 @@ function Dialogs(props) {
         let text = newMessageElement.current.value;
         props.dispatch( updateNewMessageTextActionCreator(text) );
     }
+     return (
+         <div className={style.inputText}>
+
+             <div>
+                        <textarea ref={newMessageElement}
+                                  onChange={ onMessageChange }
+                                  value={props.dialogsPage.newMessageText}
+                                  className={style.textarea}
+                        />
+             </div>
+             <div>
+                 <button
+                     onClick={ addMessage }
+                     className={style.btnadd}
+                 >Send</button>
+             </div>
+         </div>
+     );
+}
+
+function Dialogs(props) {
+    const dialogsElements = props.dialogsPage.dialogs
+        .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+
+    const messagesElements = props.dialogsPage.messages
+        .map(message => <Message message={message.message}/>);
         return (
-            <>
-            <div className={style.dialogs}>
-                <div className={style.dialogItem}>
-                    { dialogsElements }
-               </div>
-                <div className={style.messages}>
-                    { messagesElements }
+                <div className={style.dialogs}>
+                    <div className={style.messages}>
+                        { messagesElements }
+                        <Input dialogsPage={props.dialogsPage}
+                               dispatch={props.dispatch}
+                        />
+                    </div>
+                    <div className={style.dialogItem}>
+                        { dialogsElements }
+                    </div>
                 </div>
-            </div>
-        <div className={style.texting}>
-            <div>
-                    <textarea ref={newMessageElement}
-                              onChange={ onMessageChange }
-                              value={props.dialogsPage.newMessageText}
-                              className={style.textarea}/>
-            </div>
-            <div>
-                <button
-                    onClick={ addMessage }
-                    className={style.btnadd}>Add post</button>
-            </div>
-        </div>
-    </>
     );
 }
 
