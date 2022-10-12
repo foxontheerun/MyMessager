@@ -33,27 +33,29 @@ function Dialogs(props) {
         props.dispatch( updateNewMessageTextActionCreator(text) );
     }
         return (
-        <div className={style.dialogs}>
-            <div className={style.dialogItem}>
-                { dialogsElements }
-           </div>
-            <div className={style.messages}>
-                { messagesElements }
-                <div className={style.texting}>
-                    <div>
-                <textarea ref={newMessageElement}
-                          onChange={ onMessageChange }
-                          value={props.dialogsPage.newMessageText}
-                          className={style.textarea}/>
-                    </div>
-                    <div>
-                        <button
-                            onClick={ addMessage }
-                            className={style.btnadd}>Add post</button>
-                    </div>
+            <>
+            <div className={style.dialogs}>
+                <div className={style.dialogItem}>
+                    { dialogsElements }
+               </div>
+                <div className={style.messages}>
+                    { messagesElements }
                 </div>
             </div>
+        <div className={style.texting}>
+            <div>
+                    <textarea ref={newMessageElement}
+                              onChange={ onMessageChange }
+                              value={props.dialogsPage.newMessageText}
+                              className={style.textarea}/>
+            </div>
+            <div>
+                <button
+                    onClick={ addMessage }
+                    className={style.btnadd}>Add post</button>
+            </div>
         </div>
+    </>
     );
 }
 

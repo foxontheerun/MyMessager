@@ -34,14 +34,12 @@ let store = {
     _callSubscriber()  {
         console.log('popoooopopo')
     },
-
     get state() {
         return this._state;
     },
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-
     dispatch(action) {
         switch (action.type) {
             case ADD_POST:
@@ -59,7 +57,7 @@ let store = {
                 this._callSubscriber(this._state);
                 break;
             case ADD_MESSAGE:
-                if (isNotEmpty(this._state.dialogsPage.newMessageText)) {
+                if (this._state.dialogsPage.newMessageText !== '') {
                     let newMessage = {
                         id: 6,
                         message: this._state.dialogsPage.newMessageText
@@ -103,11 +101,7 @@ export const updateNewMessageTextActionCreator = (text) => {
     }
 }
 
-const isNotEmpty = (str) => {
-    if (str.trim() == '')
-        return false;
-    return true
-}
+
 
 
 export default store;
