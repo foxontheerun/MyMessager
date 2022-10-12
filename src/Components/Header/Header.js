@@ -6,7 +6,7 @@ function Header() {
     return (
         <header className={h.header}>
             {/*<img src='images/INTERPOLATION.png' width="50" height="45"></img>*/}
-            <h1>FROG</h1>
+            <h1>SWAMP</h1>
         </header>
     );
 } 

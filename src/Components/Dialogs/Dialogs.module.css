@@ -20,6 +20,9 @@
 
 .message {
     padding: 10px;
+    background: var(--background-color);
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .dialogItem .dialog {

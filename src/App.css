@@ -1,7 +1,7 @@
 :root {
   --background-color: rgb(217, 225, 195);
-  --header-color: rgb(255, 255, 255);
-  --accent-color: rgb(107, 192, 39);
+  --header-color: rgb(0, 52, 1);
+  --accent-color: rgb(175, 231, 76);
   --main-content-color: rgb(217, 225, 195);
 }
 .app-wrapper-content {

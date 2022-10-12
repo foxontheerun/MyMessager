@@ -16,11 +16,10 @@ let store = {
 
         },
         dialogsPage: {
-            dialogs: [ { id: 1, name: 'Nailya'},
-                { id: 2, name: 'Alsu'},
-                { id: 3, name: 'Polina'},
-                { id: 4, name: 'Masha'},
-                { id: 5, name: 'Aigul'},
+            dialogs: [ { id: 1, name: 'Shrek'},
+                { id: 2, name: 'Fiona'},
+                { id: 3, name: 'Donkey'},
+                { id: 4, name: 'Puss'},
             ],
             messages: [ { id: 1, message: 'привет'},
                 { id: 2, message: '=)'},
@@ -39,6 +38,7 @@ let store = {
     },
     subscribe(observer) {
         this._callSubscriber = observer;
+        
     },
     dispatch(action) {
         switch (action.type) {

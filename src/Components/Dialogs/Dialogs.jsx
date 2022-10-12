@@ -52,7 +52,7 @@ function Dialogs(props) {
         .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
     const messagesElements = props.dialogsPage.messages
-        .map(message => <Message message={message.message}/>);
+        .map(message => <Message message={message.message} className={style.message}/>);
         return (
                 <div className={style.dialogs}>
                     <div className={style.messages}>
