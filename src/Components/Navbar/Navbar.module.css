@@ -1,17 +1,150 @@
-.nav {
+/*.nav {*/
+/*    background: var(--background-color);*/
+/*    width: 15%;*/
+/*    font-size: 20px;*/
+/*    padding: 20px 20px 20px 80px;*/
+
+/*  }*/
+
+.navigation {
+    position: fixed;
+    margin: 20px 20px 20px 60px;
+    background: white;
+    /*inset: 20px;*/
+    top: 90px;
+    bottom: 10px;
+    overflow: hidden;
+    width:80px;
+    border-left: 10px solid white;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.navigation.active {
+    width: 300px;
+    border-radius: 20px;
+}
+.toggle {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--header-color);
+    transform: translateY(-5px);
+    transition: 1s;
+}
+.toggle::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--header-color);
+    transform: translateY(5px);
+    transition: 1s;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    /*background: white;*/
+}
+
+.navigation ul li:hover {
     background: var(--background-color);
-    width: 15%;
-    font-size: 20px;
-    padding: 20px 20px 20px 80px;
+}
 
-  }
-
-a {
-    color: black;
+.navigation ul li:not(:first-child):hover::before {
+    content: '';
+    top: -20px;
+    right: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: 7.5px 7.5px 0 7.5px var(--background-color);
+}
+.navigation ul li:not(:first-child):hover::after {
+    content: '';
+    bottom: -20px;
+    right: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 7.5px -7.5px 0 7.5px var(--background-color);
+}
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
     text-decoration: none;
+    color: #000000;
 }
 
-a:active {
-    color: #064f00;
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
 }
 
+
+.navigation.active .toggle::before {
+    transform: translateY(0px) rotate(-405deg);
+}
+.navigation.active .toggle::after {
+    transform: translateY(0px) rotate(225deg);
+}
+/*a {*/
+/*    color: black;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*a:active {*/
+/*    color: #064f00;*/
+/*}*/
+
+/*ul {*/
+
+/*    list-style-type: none;*/
+/*}*/

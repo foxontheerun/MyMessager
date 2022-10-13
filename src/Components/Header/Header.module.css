@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     background: var(--header-color);
-    height: 60px;
+    height: 80px;
     padding-top: 20px;
     padding-left: 80px;
     display: flex;
@@ -11,5 +11,9 @@
 }
 
   .header  img {
-      padding-right: 10px;
+      /*padding-right: 10px;*/
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 10px;
   }

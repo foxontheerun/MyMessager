@@ -41,7 +41,7 @@ function Input(props) {
                  <button
                      onClick={ addMessage }
                      className={style.btnadd}
-                 >Send</button>
+                 ><ion-icon name="send-outline"></ion-icon></button>
              </div>
          </div>
      );

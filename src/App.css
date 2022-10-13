@@ -1,17 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --background-color: rgb(217, 225, 195);
+  --background-color: rgb(243, 255, 214);
   --header-color: rgb(0, 52, 1);
   --accent-color: rgb(175, 231, 76);
-  --main-content-color: rgb(217, 225, 195);
+  --boxes-color: rgb(217, 229, 189);
+}
+
+html {
+  min-height: 100vh;
+  background: var(--boxes-color);
 }
 .app-wrapper-content {
-  background: var(--main-content-color);
+  background: var(--boxes-color);
   padding: 10px;
 }
 
 .main {
   display: flex;
-  background: var(--main-content-color);
+  background: var(--boxes-color);
 }
 
 .block {

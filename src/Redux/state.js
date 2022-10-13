@@ -38,7 +38,7 @@ let store = {
     },
     subscribe(observer) {
         this._callSubscriber = observer;
-        
+
     },
     dispatch(action) {
         switch (action.type) {
@@ -57,7 +57,7 @@ let store = {
                 this._callSubscriber(this._state);
                 break;
             case ADD_MESSAGE:
-                if (this._state.dialogsPage.newMessageText !== '') {
+                if (this._state.dialogsPage.newMessageText.trim() !== '') {
                     let newMessage = {
                         id: 6,
                         message: this._state.dialogsPage.newMessageText
