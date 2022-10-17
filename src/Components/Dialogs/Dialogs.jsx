@@ -48,17 +48,18 @@ function Input(props) {
 }
 
 function Dialogs(props) {
-    const dialogsElements = props.dialogsPage.dialogs
+    const state = props.store.getState();
+    const dialogsElements = state.dialogsPage.dialogs
         .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-    const messagesElements = props.dialogsPage.messages
+    const messagesElements = state.dialogsPage.messages
         .map(message => <Message message={message.message} className={style.message}/>);
         return (
                 <div className={style.dialogs}>
                     <div className={style.messages}>
                         { messagesElements }
-                        <Input dialogsPage={props.dialogsPage}
-                               dispatch={props.dispatch}
+                        <Input dialogsPage={state.dialogsPage}
+                               dispatch={props.store.dispatch}
                         />
                     </div>
                     <div className={style.dialogItem}>
