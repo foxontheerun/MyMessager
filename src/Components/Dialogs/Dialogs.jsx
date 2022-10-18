@@ -20,26 +20,25 @@ function Message(props) {
 
 function Input(props) {
     const newMessageElement = React.createRef();
-    const addMessage = () => {
-        props.dispatch( addMessageCreator() );
+
+    const onSendMessageClick = () => {
+        props.addMessage();
     }
     const onMessageChange = () => {
         let text = newMessageElement.current.value;
-        props.dispatch( updateNewMessageTextCreator(text) );
+        props.updateNewMessageText(text);
     }
      return (
          <div className={style.inputText}>
-
              <div>
                         <textarea ref={newMessageElement}
                                   onChange={ onMessageChange }
                                   value={props.dialogsPage.newMessageText}
-                                  className={style.textarea}
-                        />
+                                  className={style.textarea}/>
              </div>
              <div>
                  <button
-                     onClick={ addMessage }
+                     onClick={ onSendMessageClick }
                      className={style.btnadd}
                  ><ion-icon name="send-outline"></ion-icon></button>
              </div>
@@ -48,18 +47,19 @@ function Input(props) {
 }
 
 function Dialogs(props) {
-    const state = props.store.getState();
-    const dialogsElements = state.dialogsPage.dialogs
+    const dialogsElements = props.dialogsPage.dialogs
         .map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-    const messagesElements = state.dialogsPage.messages
+    const messagesElements = props.dialogsPage.messages
         .map(message => <Message message={message.message} className={style.message}/>);
         return (
                 <div className={style.dialogs}>
                     <div className={style.messages}>
                         { messagesElements }
-                        <Input dialogsPage={state.dialogsPage}
-                               dispatch={props.store.dispatch}
+                        <Input updateNewMessageText={props.updateNewMessageText}
+                               dialogsPage={props.
+                                   dialogsPage}
+                               addMessage={props.addMessage}
                         />
                     </div>
                     <div className={style.dialogItem}>

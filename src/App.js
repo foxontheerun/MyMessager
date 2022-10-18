@@ -6,10 +6,10 @@ import Navbar from './Components/Navbar/Navbar';
 import Dialogs from './Components/Dialogs/Dialogs';
 import News from "./Components/News/News";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 function App(props) {
-    debugger;
   return (<BrowserRouter>
               <div className='app-wrapper'>
                   <Header/>
@@ -17,8 +17,9 @@ function App(props) {
                       <Navbar/>
                       <div className='app-wrapper-content'>
                           <Routes>
-                              <Route path='/profile' element={<Profile store={props.store}/>}/>
-                              <Route path='/messages' element={<Dialogs store={props.store}/>}/>
+                              <Route path='/profile' element={<Profile />}/>
+                              debugger;
+                              <Route path='/messages' element={<DialogsContainer />}/>
                               <Route path='/news' element={<News />}/>
                           </Routes>
                       </div>
