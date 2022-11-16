@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.users {
+    /*display: flex;*/
+    font-size: 20px;
+    margin-left: 400px;
+}
+.usersPhoto {
+    width: 100px;
+    hight: 100px;
+}

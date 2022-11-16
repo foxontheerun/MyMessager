@@ -9,7 +9,7 @@ import {followAC, setUsersAC, unfollowAC} from "../../Redux/usersReducer";
 
 let mapStateToProps = (state) => {
     return {
-        users: state.users
+        users: state.usersPage.users
     }
 };
 
